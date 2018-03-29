@@ -1,0 +1,7 @@
+#!/bin/bash
+
+PORT=2878
+SERVER=localhost
+speedtest-cli --simple | awk -f /home/bill/code/speedtest/sp.awk |  nc -q0 $SERVER $PORT
+RC=$?
+echo Bandwidth sent at `date` with rc= $RC | logger
