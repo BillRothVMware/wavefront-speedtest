@@ -1,6 +1,8 @@
 #!/bin/bash
 
+# port for your wavefront proxy
 PORT=2878
+#location of your wavefront proxy
 SERVER=localhost
 speedtest-cli --simple | awk -f /home/bill/code/speedtest/sp.awk |  nc -q0 $SERVER $PORT
 RC=$?
